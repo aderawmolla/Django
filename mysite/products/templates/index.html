@@ -1,0 +1,26 @@
+<!--this is the template for index in veiws-->
+<!--products passed from veiws-->
+<!--as defined in products first browser looks this and fills the content in base.html with this defined content
+then came back and this html element next-->
+{% extends 'base.html'%}
+{% block content%}
+<div style="margin:30px;"class="row">
+    <h1 style="text-align:center;background-color:#006400;color:#fff; margin:0 0 15px 0px">Products</h1>
+    {% for product in products%}
+    <div class="col">
+
+        <div  class="card" style="width: 18rem;">
+            <img src={{product.image_url}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">{{product.price}}<strong style="padding:5px">Birr</strong></p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
